@@ -1,4 +1,4 @@
-// Copyright 2017 the authors. See the 'Copyright and license' section of the
+// Copyright 2017-2018 the authors. See the 'Copyright and license' section of the
 // README.md file at the top-level directory of this repository.
 //
 // Licensed under the Apache License, Version 2.0 (the LICENSE-APACHE file) or
@@ -21,11 +21,6 @@ extern crate num_cpus;
 
 #[macro_use]
 extern crate alloc_fmt;
-// Linking in `bsalloc` causes it to be used as the global heap allocator. That is important when
-// using this as a basis for a `malloc` library, but it becomes a hindrance when using this crate
-// as a specialized allocator library.
-#[cfg(not(feature = "use_default_allocator"))]
-extern crate bsalloc;
 #[macro_use]
 extern crate lazy_static;
 #[macro_use]
